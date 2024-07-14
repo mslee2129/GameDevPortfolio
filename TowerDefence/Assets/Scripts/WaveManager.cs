@@ -61,13 +61,13 @@ public class WaveManager : MonoBehaviour
 
     void SpawnNormalEnemy() 
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemyPrefab, spawnPoint.position, enemyPrefab.transform.rotation);
         IncreaseEnemyCount();
     }
 
     void SpawnBossEnemy()
     {
-        Instantiate(bossPrefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(bossPrefab, spawnPoint.position, bossPrefab.transform.rotation);
         Debug.Log("Boss enemy spawned");
         IncreaseEnemyCount();
     }
