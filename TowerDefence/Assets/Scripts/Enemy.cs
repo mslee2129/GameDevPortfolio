@@ -5,21 +5,31 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
-    
-    
-    private EnemyAnimation enemyAnimation;
-    [SerializeField] protected float healthPoint = 10f;
-    [SerializeField]protected int bounty = 50;
+    [SerializeField] protected float speed = 10f;
+    protected Transform target;
+    protected int waypointIndex = 0;
+    protected float healthPoint = 10f;
+    protected int bounty = 50;
     protected virtual void Start()
     {
-        enemyAnimation = GetComponentInChildren<EnemyAnimation>();
+        target = Waypoints.points[0];
+    }
+    
+    void Update()
+    {
+       
+    }
+
+    void GetNextWaypoint() {
+        if(waypointIndex < 3) waypointIndex++;
+        else waypointIndex = 0;
+        target = Waypoints.points[waypointIndex];
     }
 
     public void TakeDamage(float damage)
     {
         healthPoint -= damage;
         Debug.Log("Damage Taken");
-        enemyAnimation.TriggerHit();
         if(healthPoint <= 0)
         {
             Die();
