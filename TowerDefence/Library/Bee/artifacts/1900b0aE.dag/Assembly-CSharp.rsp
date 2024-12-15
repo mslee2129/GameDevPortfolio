@@ -356,6 +356,8 @@
 "Assets/Scripts/BuildManager.cs"
 "Assets/Scripts/EndScene.cs"
 "Assets/Scripts/Enemy.cs"
+"Assets/Scripts/EnemyAnimation.cs"
+"Assets/Scripts/EnemyMovement.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Node.cs"
 "Assets/Scripts/Projectile.cs"
